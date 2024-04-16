@@ -16,6 +16,7 @@
         window.location.href = ngrok_url;
       }
       else {
+        document.getElementById('displayonfail').style.display = initial;
         console.error("Excpecting a responce code of 200.");
       }
     }
@@ -23,5 +24,7 @@
   client.open("HEAD", ngrok_url);
   client.send();
 </script>
-<h1>Failed to connect!<h1>
-<h2>The real server is probably not being hosted right now.<h2>
+<body id="displayonfail" style="display:none">
+  <h1>Failed to connect!</h1>
+  <h2>The real server is probably not being hosted right now.</h2>
+<body>
