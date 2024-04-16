@@ -10,13 +10,13 @@
   var client = new XMLHttpRequest();
   client.onreadystatechange = function() {
     if(this.readyState == 4) {
-      console.log("Recieved a responce code of" + this.status);
+      console.log("Recieved a responce code of " + this.status + ".");
       if(this.status == 200) {
-        console.log("Recieved a responce code of 200");
-        window.location.reload(ngrok_url);
+        console.log("Recieved a responce code of 200.");
+        window.location.href = ngrok_url;
       }
       else {
-        console.error("Excpecting a responce code of 200");
+        console.error("Excpecting a responce code of 200.");
       }
     }
   }
