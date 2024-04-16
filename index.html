@@ -12,11 +12,10 @@
     method: "HEAD",
     statusCode: {
       404: function () {
-        let fallback = document.createElement('h2');
-        fallback.innerText = "Recieved a 404 error responce code.";
-        document.append(fallback);
+        console.error("Recieved a 404 error responce code.");
       },
       200: function() {
+        console.log("Recieved a 200 responce code.");
         window.location.reload(ngrok_url);
       }
     }
