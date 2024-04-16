@@ -5,22 +5,23 @@
 <meta http-equiv="refresh" content="0; URL=https://internally-civil-eel.ngrok-free.app">
 <link rel="canonical" href="https://internally-civil-eel.ngrok-free.app">
 -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
   let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
-  $.ajax({
-    url: ngrok_url,
-    method: "HEAD",
-    statusCode: {
-      404: function () {
-        console.error("Recieved a 404 error responce code.");
-      },
-      200: function() {
-        console.log("Recieved a 200 responce code.");
+  var client = new XMLHttpRequest();
+  client.onreadystatechange = function() {
+    if(this.readyState == 4) {
+      console.log("Recieved a responce code of" + this.status);
+      if(this.status == 200) {
+        console.log("Recieved a responce code of 200");
         window.location.reload(ngrok_url);
       }
+      else {
+        console.error(""Excpecting a responce code of 200");
+      }
     }
-  });
+  }
+  client.open("HEAD", ngrok_url);
+  client.send();
 </script>
 <h1>Failed to connect!<h1>
 <h2>The real server is probably not being hosted right now.<h2>
