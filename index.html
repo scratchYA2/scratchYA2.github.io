@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Redirecting to my current running quiz.</title>
+<title>Redirecting to my current hosted website.</title>
+<!--
 <meta http-equiv="refresh" content="0; URL=https://internally-civil-eel.ngrok-free.app">
 <link rel="canonical" href="https://internally-civil-eel.ngrok-free.app">
+-->
+<script>
+  let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
+  $.ajax({
+    url: ngrok_url,
+    method: "HEAD",
+    statusCode: {
+      404: function () {
+        let fallback = document.createElement('h2');
+        fallback.innerText = "Recieved a 404 error responce code.";
+        document.append(fallback);
+      },
+      200: function() {
+        window.location.reload(ngrok_url);
+      }
+    }
+  });
+</script>
+<h1>Failed to connect!<h1>
+<h2>The real server is probably not being hosted right now.<h2>
