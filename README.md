@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js">
+    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
   </head>
 
   <body>
