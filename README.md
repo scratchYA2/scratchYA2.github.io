@@ -16,6 +16,9 @@
           div = js.document.createElement("div")
           div.innerHTML = f'<h1>This element was created from Python</h1><p>{os.listdir()}</p>'
           js.document.body.prepend(div)
+
+          with open('index.html', 'w') as f:
+            f.write('Now the file has more content!')
         `);
       }
       main();
