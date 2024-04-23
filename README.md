@@ -1,10 +1,20 @@
 <html>
   <head>
-    <meta  http-equiv="refresh" content="5" >
+    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js">
   </head>
+
   <body>
-    <h2>This is a test!</h2>
-    <p>One big<br>  big test</p>
-    <h1>Please make this work!</h1>
+    <h2>Pyodide test page</h2>
+    <p>Open your browser console to see Pyodide output</p>
+    <script>
+      async function main(){
+        let pyodide = await loadPyodide();
+        console.log(pyodide.runPython(`
+          import os
+          os.listdir()
+        `));
+      }
+      main();
+    </script>
   </body>
 </html>
