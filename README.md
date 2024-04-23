@@ -1,4 +1,3 @@
-<!--
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
@@ -10,32 +9,14 @@
     <script>
       async function main(){
         let pyodide = await loadPyodide();
-        console.log(pyodide.runPython(`
+        pyodide.runPython(`
           import os
-          os.listdir()
-        `));
-      }
-      main();
-    </script>
-  </body>
-</html>
--->
+          import js
 
-<html>
-  <head>
-      <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
-  </head>
-  <body>
-    Pyodide test page <br>
-    Open your browser console to see Pyodide output
-    <script type="text/javascript">
-      async function main(){
-        let pyodide = await loadPyodide();
-        console.log(pyodide.runPython(`
-            import sys
-            sys.version
-        `));
-        pyodide.runPython("print(1 + 2)");
+          div = js.document.createElement("div")
+          div.innerHTML = f'<h1>This element was created from Python</h1><p>{os.listdir()}</p>'
+          js.document.body.prepend(div)
+        `);
       }
       main();
     </script>
