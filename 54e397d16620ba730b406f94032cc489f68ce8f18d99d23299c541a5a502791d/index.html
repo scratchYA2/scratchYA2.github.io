@@ -1,7 +1,14 @@
 <html>
 <h1>Welcome and Hello World!</h1>
 <script>
-  if (window.location.hash != '#bbf62e23a765bbb8b3d19086f3597f5eef57803e2ae7edcf46edaa9396d914d9') {document.querySelector('html').remove()}
+  if (window.location.hash != '#bbf62e23a765bbb8b3d19086f3597f5eef57803e2ae7edcf46edaa9396d914d9') {
+    document.querySelector('html').remove()
+    let e = document.createElement('html')
+    e.innerHTML = `
+      <h1>Object not found!</h1>
+      <p>The requested URL was not found on this server. If you entered the URL<br>&emsp;manually please check your spelling and try again.<br><br>&emsp;If you think this is a server error, feel free to contact the webmaster.
+  }
+  e.style = "max-width:100px; max-height:60px; margin:auto"
 </script>
 <p>After "script"</p>
 </html>
