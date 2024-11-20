@@ -1,8 +1,6 @@
 <html>
   <style>
-    div {
-      color: white;
-      background: red;
+    #the_outer_div {
       padding: 15px;
       position: absolute;
       top: 50%;
@@ -11,14 +9,17 @@
       -webkit-transform: translate(-50%,-50%);
       transform: translate(-50%,-50%);
     }
+
+    #the_outer_div {
+      text_indent: 50px;
+    }
   </style>
 
-  <div>
+  <div id="the_outer_div">
     <h1>Object not found!</h1>
-    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The requested URL was not found on this server. If you entered the URL
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;manually please check your spelling and try again.
-      
-      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;If you think this is a server-side error, feel free to contact the webmaster.
-    </p>
+    <div id="the_inner_div">
+      <p>The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.</p>
+      <p>If you think this is a server-side error, feel free to contact the webmaster.</p>
+    </div>
   </div>
 </html>
