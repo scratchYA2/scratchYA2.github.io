@@ -9,12 +9,19 @@
 
 <body style="font-family: arial">
   <script>
-    var ctx = null;
-    var vctx = null;
-    var canvas = null;
-    var vcanvas = null;
-    var video = null;
-    let global_mediaStream = null
+    //var ctx = null;
+    //var vctx = null;
+    //var canvas = null;
+    //var vcanvas = null;
+    //var video = null;
+    //let global_mediaStream = null
+
+    async function startCapture() {
+      navigator.mediaDevices.getDisplayMedia({video: {cursor: "always"}, audio: false}).then((mediaStream) => {
+        document.querySelector('video').srcObject = mediaStream
+        global_mediaStream = mediaStream
+      })
+    }
 
     async function screenshot(mediaStream) {
       if (mediaStream == null) {return}
