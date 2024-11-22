@@ -9,7 +9,7 @@
 
 <body style="font-family: arial">
   <script type="module">
-    import JSSaveFile from './save-file'
+    import JSSaveFile from './save-file.js'
 
     navigator.mediaDevices.getDisplayMedia({video: {cursor: 'never', logicalSurface: true}, audio: false, monitorTypeSurfaces: 'include'}).then((mediaStream) => {
       const track = new ImageCapture(mediaStream.getVideoTracks()[0])
