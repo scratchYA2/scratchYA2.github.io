@@ -1,0 +1,37 @@
+{
+  "name": "save-file",
+  "version": "1.0.3",
+  "description": "download files to save locally by JavaScript.",
+  "main": "save-file.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "download",
+    "save"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "author": {
+    "name": "descire",
+    "url": "https://github.com/15751165579",
+    "email": "15751165579@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/15751165579/js-save-file"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
