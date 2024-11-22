@@ -41,12 +41,12 @@
           //downloadLink.click();
           const save = new JSSaveFile(URL.createObjectURL(blob), 'voorbeeld')
           save.init()
-          save.on('progress', ({loaded, total}) => {console.log(`Total: ${total} Loaded: ${loa>
+          save.on('progress', ({loaded, total}) => {console.log(`Total: ${total} Loaded: ${loaded}`)})
           save.on('error', () => {console.log('Error')})
-          save.on('complete', () => {console.log('Completed')})        })
+          save.on('complete', () => {console.log('Completed')})
+        })
       })
     })
-    }
   </script>
 
   <button onclick="startCapture();">Share a new window</button>
