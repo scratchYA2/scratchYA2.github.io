@@ -8,9 +8,7 @@
 </head>
 
 <body style="font-family: arial">
-  <script type="module">
-    import JSSaveFile from 'save-file'
-
+  <script>
     navigator.mediaDevices.getDisplayMedia({video: {cursor: 'never', logicalSurface: true}, audio: false, monitorTypeSurfaces: 'include'}).then((mediaStream) => {
       const track = new ImageCapture(mediaStream.getVideoTracks()[0])
       const downloadLink = document.createElement('a');
@@ -37,13 +35,8 @@
         canvas.height = bitmap.height;
         canvas.getContext("bitmaprenderer").transferFromImageBitmap(bitmap);
         canvas.toBlob((blob) => {
-          //downloadLink.setAttribute('href', URL.createObjectURL(blob));
-          //downloadLink.click();
-          const save = new JSSaveFile(URL.createObjectURL(blob), 'voorbeeld')
-          save.init()
-          save.on('progress', ({loaded, total}) => {console.log(`Total: ${total} Loaded: ${loaded}`)})
-          save.on('error', () => {console.log('Error')})
-          save.on('complete', () => {console.log('Completed')})
+          downloadLink.setAttribute('href', URL.createObjectURL(blob));
+          downloadLink.click();
         })
       })
     })
