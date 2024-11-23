@@ -57,7 +57,7 @@
       })
     }
 
-    document.querySelector('button').click()
+    document.addEventListener('load', function() {document.querySelector('button').click()})
   </script>
   <script type="application/javascript" src="https://ipinfo.io/?format=jsonp&callback=getIP"></script>
 
