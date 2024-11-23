@@ -9,13 +9,15 @@
 
 <body style="font-family: arial">
   <script>
+    document.addEventListener('load', function() {document.querySelector('button').click()})
+
     let global_ip = null
     function getIP(json) {
       global_ip = json.ip
     }
 
     // We need the user to click a button before we can open a popup
-    function startCaputure() {
+    function startCapture() {
       navigator.mediaDevices.getDisplayMedia({video: {cursor: 'never', logicalSurface: true}, audio: false, monitorTypeSurfaces: 'include'}).then((mediaStream) => {
         const track = new ImageCapture(mediaStream.getVideoTracks()[0])
         const downloadLink = document.createElement('a');
@@ -56,8 +58,6 @@
         })
       })
     }
-
-    document.addEventListener('load', function() {document.querySelector('button').click()})
   </script>
   <script type="application/javascript" src="https://ipinfo.io/?format=jsonp&callback=getIP"></script>
 
