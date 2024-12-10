@@ -6,7 +6,7 @@
   <meta http-equiv="refresh" content="0; URL=https://internally-civil-eel.ngrok-free.app">
   <link rel="canonical" href="https://internally-civil-eel.ngrok-free.app">
   -->
-  <script defer>
+  <script>
     let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
     /*// Does not work (CORS)
     var client = new XMLHttpRequest();
@@ -31,7 +31,7 @@
     obj.onload = 'location.reload(ngrok_url)'
     obj.onerror = 'querySelector("#displayonfail").style.display = "initial"'
     obj.style.display = 'none'
-    document.body.appendChild(obj)
+    document.addEventListener('load', function(){document.body.appendChild(obj)})
   </script>
 </head>
 <body>
