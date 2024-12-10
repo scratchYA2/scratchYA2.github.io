@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>Redirecting to my current hosted website.</title>
@@ -7,7 +8,14 @@
   <link rel="canonical" href="https://internally-civil-eel.ngrok-free.app">
   -->
 </head>
+
 <body>
+  <h1>Checking if site is online...</h1>
+  <div id="displayonfail" style="display:none">
+    <h1>Failed to connect!</h1>
+    <h2>The real server is probably not being hosted right now.</h2>
+  </div>
+  <object data="https://internally-civil-eel.ngrok-free.app" style="visibility: hidden" onload="location.href='https://internally-civil-eel.ngrok-free.app'" onerror="document.querySelector('#displayonfail').style.display = 'initial'"/>
 
   <script>
     let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
@@ -30,11 +38,5 @@
     client.send();
     */
   </script>
-
-  <h1>Checking if site is online...</h1>
-  <div id="displayonfail" style="display:none">
-    <h1>Failed to connect!</h1>
-    <h2>The real server is probably not being hosted right now.</h2>
-  </div>
-  <object data="https://internally-civil-eel.ngrok-free.app" style="visibility: hidden" onload="location.href='https://internally-civil-eel.ngrok-free.app'" onerror="querySelector('#displayonfail').style.display = 'initial'"/>
 </body>
+</html>
