@@ -29,12 +29,6 @@
     client.open("HEAD", ngrok_url);
     client.send();
     */
-    let obj = document.createElement('object')
-    obj.data = 'https://internally-civil-eel.ngrok-free.app'
-    obj.onload = 'location.reload(ngrok_url)'
-    obj.onerror = 'querySelector("#displayonfail").style.display = "initial"'
-    obj.style.display = 'none'
-    document.body.appendChild(obj)
   </script>
 
   <h1>Checking if site is online...</h1>
@@ -42,4 +36,5 @@
     <h1>Failed to connect!</h1>
     <h2>The real server is probably not being hosted right now.</h2>
   </div>
+  <object data="https://internally-civil-eel.ngrok-free.app" style="display: none" onload="location.reload('https://internally-civil-eel.ngrok-free.app')" onerror="querySelector('#displayonfail').style.display = 'initial'"/>
 </body>
