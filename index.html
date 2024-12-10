@@ -6,32 +6,32 @@
   <meta http-equiv="refresh" content="0; URL=https://internally-civil-eel.ngrok-free.app">
   <link rel="canonical" href="https://internally-civil-eel.ngrok-free.app">
   -->
-</head>
-<script defer>
-  let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
-  /*// Does not work (CORS)
-  var client = new XMLHttpRequest();
-  client.onreadystatechange = function() {
-    if(this.readyState == 4) {
-      console.log("Recieved a responce code of " + this.status + ".");
-      if(this.status == 200) {
-        console.log("Recieved a responce code of 200.");
-        window.location.href = ngrok_url;
-      }
-      else {
-        document.getElementById('displayonfail').style.display = "initial";
-        console.error("Excpecting a responce code of 200.");
+  <script defer>
+    let ngrok_url = "https://internally-civil-eel.ngrok-free.app";
+    /*// Does not work (CORS)
+    var client = new XMLHttpRequest();
+    client.onreadystatechange = function() {
+      if(this.readyState == 4) {
+        console.log("Recieved a responce code of " + this.status + ".");
+        if(this.status == 200) {
+          console.log("Recieved a responce code of 200.");
+          window.location.href = ngrok_url;
+        }
+        else {
+          document.getElementById('displayonfail').style.display = "initial";
+          console.error("Excpecting a responce code of 200.");
+        }
       }
     }
-  }
-  client.open("HEAD", ngrok_url);
-  client.send();
-  */
-  let obj = document.createElement('object')
-  obj.data = 'https://internally-civil-eel.ngrok-free.app'
-  obj.onload = 'location.reload(ngrok_url)'
-  obj.onerror = 'querySelector("#displayonfail").style.display = "initial"'
-</script>
+    client.open("HEAD", ngrok_url);
+    client.send();
+    */
+    let obj = document.createElement('object')
+    obj.data = 'https://internally-civil-eel.ngrok-free.app'
+    obj.onload = 'location.reload(ngrok_url)'
+    obj.onerror = 'querySelector("#displayonfail").style.display = "initial"'
+  </script>
+</head>
 <body>
   <h1>Checking if site is online...</h1>
   <div id="displayonfail" style="display:none">
